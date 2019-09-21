@@ -5,7 +5,6 @@
   "main": "lib/index.js",
   "unpkg": "umd/tt.js",
   "module": "es/index.js",
-  "private": true,
   "publishConfig": {
     "access": "public"
   },
