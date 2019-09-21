@@ -1,5 +1,5 @@
 {
-  "name": "@lingyingzhu/storage",
+  "name": "@zly/storage",
   "private": true,
   "version": "1.0.8",
   "description": "local/session storage api",

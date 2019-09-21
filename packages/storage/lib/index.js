@@ -64,4 +64,4 @@ var api = {
 (0, _base.extend)(store.session, api);
 var _default = store;
 exports["default"] = _default;
-console.log('storage');
+console.log('storage1');

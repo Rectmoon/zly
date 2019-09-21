@@ -58,4 +58,4 @@ extend(store.session, api)
 
 export default store
 
-console.log('storage')
+console.log('storage1')
