@@ -33,7 +33,11 @@ const commonConfig = {
       }
     ]
   },
-  plugins: [new webpack.ProgressPlugin()]
+  plugins: [new webpack.ProgressPlugin()],
+  optimization: {
+    nodeEnv: 'development',
+    minimize: false
+  }
 }
 
 const packageDir = resolve('packages')
@@ -48,7 +52,6 @@ module.exports = packages.reduce((res, next) => {
   }
   res = res.concat([
     webpackMerge(commonConfig, {
-      mode: 'development',
       output: {
         filename: '[name].js',
         path: resolve(`${packageDir}/${packageName}/umd`)
@@ -56,10 +59,13 @@ module.exports = packages.reduce((res, next) => {
       ...c
     }),
     webpackMerge(commonConfig, {
-      mode: 'production',
       output: {
         filename: '[name].min.js',
         path: resolve(`${packageDir}/${packageName}/umd`)
+      },
+      optimization: {
+        nodeEnv: 'production',
+        minimize: true
       },
       ...c
     })
