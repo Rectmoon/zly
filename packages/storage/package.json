@@ -1,7 +1,7 @@
 {
   "name": "@zly/storage",
   "private": true,
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "local/session storage api",
   "main": "lib/index.js",
   "unpkg": "umd/storage.min.js",
