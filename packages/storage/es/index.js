@@ -58,4 +58,4 @@ var api = {
 extend(store, api);
 extend(store.session, api);
 export default store;
-console.log(1);
+console.log(12);
