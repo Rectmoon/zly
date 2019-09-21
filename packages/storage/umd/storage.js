@@ -1566,4 +1566,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
 /***/ })
 
 /******/ })["default"];
+});ed;\n  },\n  remove: function remove(k) {\n    if (this.disabled) return;\n    this.storage.removeItem(k);\n  },\n  clear: function clear() {\n    if (this.disabled) return;\n    this.storage.clear();\n  },\n  forEach: function forEach(cb) {\n    if (this.disabled) return;\n\n    for (var i = 0; i < this.storage.length; i++) {\n      var k = this.storage.key(i);\n      cb(k, this.get(k));\n    }\n  },\n  getAll: function getAll() {\n    var _context;\n\n    if (this.disabled) return null;\n    var res = {};\n\n    _babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_0___default()(_context = this).call(_context, function (k, v) {\n      res[k] = v;\n    });\n\n    return res;\n  }\n};\nObject(_base__WEBPACK_IMPORTED_MODULE_2__[\"extend\"])(store, api);\nObject(_base__WEBPACK_IMPORTED_MODULE_2__[\"extend\"])(store.session, api);\n/* harmony default export */ __webpack_exports__[\"default\"] = (store);\nconsole.log('ll');\n\n//# sourceURL=webpack://%5Bname%5D/./packages/storage/es/index.js?");
+
+/***/ })
+
+/******/ })["default"];
 });
