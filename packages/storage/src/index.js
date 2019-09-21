@@ -57,3 +57,5 @@ extend(store, api)
 extend(store.session, api)
 
 export default store
+
+console.log(1)
