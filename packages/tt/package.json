@@ -1,17 +1,19 @@
 {
-  "name": "@zly/storage",
-  "private": true,
-  "version": "1.0.15",
-  "description": "local/session storage api",
+  "name": "@zhulingying/tt",
+  "version": "1.0.1",
+  "description": "",
   "main": "lib/index.js",
-  "unpkg": "umd/storage.min.js",
+  "unpkg": "umd/tt.js",
   "module": "es/index.js",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build:commonjs": "cross-env BABEL_ENV=commonjs ../../node_modules/.bin/babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es ../../node_modules/.bin/babel src --out-dir es"
   },
   "keywords": [],
-  "author": "Rectmoon",
-  "license": "MIT",
-  "gitHead": "b4797fc95e09845d5cd8faf7ad540b08a80fa67e"
+  "author": "",
+  "license": "ISC"
 }
