@@ -1,6 +1,16 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "rimraf packages/**/umd",
+    "build:umd": "npm run clean && webpack --config build/webpack.config.lib.js",
+    "build:es": "lerna run build:es",
+    "build:commonjs": "lerna run build:commonjs",
+    "build": "npm run build:umd && npm run build:es && npm run build:commonjs"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
