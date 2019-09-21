@@ -1,7 +1,7 @@
 {
   "name": "@lingyingzhu/storage",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "local/session storage api",
   "main": "lib/index.js",
   "unpkg": "umd/storage.min.js",
