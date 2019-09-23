@@ -1,14 +1,23 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime-corejs3/helpers/interopRequireDefault");
+
 exports.__esModule = true;
 exports.getType = getType;
 exports.isPlaneObject = isPlaneObject;
 exports.extend = extend;
 exports.isObject = exports.isNumber = exports.isString = exports.isArray = exports.isFunction = exports.isBoolean = exports.isUndefined = exports.isNull = void 0;
+
+var _getPrototypeOf = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/object/get-prototype-of"));
+
+var _slice = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/instance/slice"));
+
 var oproto = Object.prototype;
 
 function getType(o) {
-  return oproto.toString.call(o).slice(8, -1).toLowerCase();
+  var _context;
+
+  return (0, _slice["default"])(_context = oproto.toString.call(o)).call(_context, 8, -1).toLowerCase();
 }
 
 var isNull = function isNull(o) {
@@ -60,7 +69,7 @@ var isObject = function isObject(o) {
 exports.isObject = isObject;
 
 function isPlaneObject(o) {
-  return getType(o) === 'object' && Object.getPrototypeOf(o) === oproto;
+  return getType(o) === 'object' && (0, _getPrototypeOf["default"])(o) === oproto;
 }
 
 function extend() {

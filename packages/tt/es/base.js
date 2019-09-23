@@ -1,6 +1,10 @@
+import _Object$getPrototypeOf from "@babel/runtime-corejs3/core-js-stable/object/get-prototype-of";
+import _sliceInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/slice";
 var oproto = Object.prototype;
 export function getType(o) {
-  return oproto.toString.call(o).slice(8, -1).toLowerCase();
+  var _context;
+
+  return _sliceInstanceProperty(_context = oproto.toString.call(o)).call(_context, 8, -1).toLowerCase();
 }
 export var isNull = function isNull(o) {
   return getType(o) === 'null';
@@ -27,7 +31,7 @@ export var isObject = function isObject(o) {
   return getType(o) === 'object';
 };
 export function isPlaneObject(o) {
-  return getType(o) === 'object' && Object.getPrototypeOf(o) === oproto;
+  return getType(o) === 'object' && _Object$getPrototypeOf(o) === oproto;
 }
 export function extend() {
   var options,

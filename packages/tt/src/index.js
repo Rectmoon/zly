@@ -56,6 +56,6 @@ const api = {
 extend(store, api)
 extend(store.session, api)
 
-export default store
-
 if (process.env.NODE_ENV === 'development') console.log(123456)
+
+export default store

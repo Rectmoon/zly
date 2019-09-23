@@ -1,7 +1,13 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime-corejs3/helpers/interopRequireDefault");
+
 exports.__esModule = true;
 exports["default"] = void 0;
+
+var _forEach = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/instance/for-each"));
+
+var _stringify = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/json/stringify"));
 
 var _base = require("./base");
 
@@ -25,7 +31,7 @@ var api = {
   set: function set(k, v) {
     if (this.disabled) return;
     if (v === undefined) return this.remove(k);
-    this.storage.setItem(k, JSON.stringify(v));
+    this.storage.setItem(k, (0, _stringify["default"])(v));
   },
   get: function get(k, def) {
     if (this.disabled) return def;
@@ -52,9 +58,11 @@ var api = {
     }
   },
   getAll: function getAll() {
+    var _context;
+
     if (this.disabled) return null;
     var res = {};
-    this.forEach(function (k, v) {
+    (0, _forEach["default"])(_context = this).call(_context, function (k, v) {
       res[k] = v;
     });
     return res;
@@ -62,6 +70,6 @@ var api = {
 };
 (0, _base.extend)(store, api);
 (0, _base.extend)(store.session, api);
+if (process.env.NODE_ENV === 'development') console.log(123456);
 var _default = store;
 exports["default"] = _default;
-if (process.env.NODE_ENV === 'development') console.log(123456);

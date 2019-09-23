@@ -8,7 +8,9 @@
     "build:umd": "npm run clean && webpack --config build/webpack.config.lib.js",
     "build:es": "lerna run build:es",
     "build:commonjs": "lerna run build:commonjs",
-    "build": "npm run build:umd && npm run build:es && npm run build:commonjs"
+    "build": "npm run build:umd && npm run build:es && npm run build:commonjs",
+    "example:dev": "webpack-dev-server --config build/webpack.config.dev.js",
+    "example:build": "webpack --config build/webpack.config.prod.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -20,6 +22,7 @@
     "babel-loader": "^8.0.6",
     "cross-env": "^6.0.0",
     "glob": "^7.1.4",
+    "html-webpack-plugin": "^3.2.0",
     "lerna": "^3.16.4",
     "rimraf": "^3.0.0",
     "webpack": "^4.40.2",

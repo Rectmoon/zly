@@ -1,3 +1,5 @@
+import _forEachInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/for-each";
+import _JSON$stringify from "@babel/runtime-corejs3/core-js-stable/json/stringify";
 import { extend } from './base';
 
 function deserialize(val) {
@@ -20,7 +22,7 @@ var api = {
   set: function set(k, v) {
     if (this.disabled) return;
     if (v === undefined) return this.remove(k);
-    this.storage.setItem(k, JSON.stringify(v));
+    this.storage.setItem(k, _JSON$stringify(v));
   },
   get: function get(k, def) {
     if (this.disabled) return def;
@@ -47,15 +49,19 @@ var api = {
     }
   },
   getAll: function getAll() {
+    var _context;
+
     if (this.disabled) return null;
     var res = {};
-    this.forEach(function (k, v) {
+
+    _forEachInstanceProperty(_context = this).call(_context, function (k, v) {
       res[k] = v;
     });
+
     return res;
   }
 };
 extend(store, api);
 extend(store.session, api);
-export default store;
 if (process.env.NODE_ENV === 'development') console.log(123456);
+export default store;

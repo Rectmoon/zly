@@ -2940,8 +2940,8 @@ var api = {
 };
 extend(store, api);
 extend(store.session, api);
-/* harmony default export */ var tt_src = __webpack_exports__["default"] = (store);
 if (true) console.log(123456);
+/* harmony default export */ var tt_src = __webpack_exports__["default"] = (store);
 
 /***/ })
 /******/ ])["default"];

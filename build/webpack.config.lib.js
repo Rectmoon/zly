@@ -2,10 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
-
-function resolve(dir) {
-  return path.resolve(__dirname, '..', dir)
-}
+const { resolve } = require('./utils')
 
 const commonConfig = {
   mode: 'production',
@@ -33,15 +30,11 @@ const commonConfig = {
       }
     ]
   },
-  plugins: [new webpack.ProgressPlugin()],
-  optimization: {
-    nodeEnv: 'development',
-    minimize: false
-  }
+  plugins: [new webpack.ProgressPlugin()]
 }
 
 const packageDir = resolve('packages')
-const packages = glob.sync(`${packageDir}/**/index.js`)
+const packages = glob.sync(`${packageDir}/**/src/index.js`)
 
 module.exports = packages.reduce((res, next) => {
   const packageName = path.relative(packageDir, next).split(path.sep)[0]
@@ -56,16 +49,21 @@ module.exports = packages.reduce((res, next) => {
         filename: '[name].js',
         path: resolve(`${packageDir}/${packageName}/umd`)
       },
-      ...c
+      optimization: {
+        // nodeEnv: 'development',
+        minimize: false
+      },
+      ...c,
+      plugins: [
+        new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify('development')
+        })
+      ]
     }),
     webpackMerge(commonConfig, {
       output: {
         filename: '[name].min.js',
         path: resolve(`${packageDir}/${packageName}/umd`)
-      },
-      optimization: {
-        nodeEnv: 'production',
-        minimize: true
       },
       ...c
     })
