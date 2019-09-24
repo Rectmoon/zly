@@ -70,6 +70,6 @@ var api = {
 };
 (0, _base.extend)(store, api);
 (0, _base.extend)(store.session, api);
-if (process.env.NODE_ENV === 'development') console.log(123456);
+if (process.env.NODE_ENV === 'development') console.log('来首dj');
 var _default = store;
 exports["default"] = _default;

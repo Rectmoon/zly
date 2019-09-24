@@ -2940,7 +2940,7 @@ var api = {
 };
 extend(store, api);
 extend(store.session, api);
-if (true) console.log(123456);
+if (true) console.log('来首dj');
 /* harmony default export */ var tt_src = __webpack_exports__["default"] = (store);
 
 /***/ })
