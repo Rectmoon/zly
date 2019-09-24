@@ -56,6 +56,6 @@ const api = {
 extend(store, api)
 extend(store.session, api)
 
-if (process.env.NODE_ENV === 'development') console.log('来首dj')
+if (process.env.NODE_ENV === 'development') console.log('来首rap')
 
 export default store
